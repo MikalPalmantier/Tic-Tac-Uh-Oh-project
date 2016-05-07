@@ -1,0 +1,854 @@
+<html>
+
+<head>
+
+<h1 align="center">
+Tic-Tac-Uh-Oh
+</h1>
+
+</head>
+
+<style type="text/css">
+
+body {
+	background-color:#ECD9AD;
+}
+
+th {
+	background-color:#C4A887;
+	color:transparent;
+}
+
+table {
+	border-color:black;
+}
+
+#Tile {
+	position:absolute;
+	left:9999px;
+}
+
+#SorryM8 {
+	position:absolute;
+	left:9999px;
+}
+
+#validator {
+	position:absolute;
+	left:9999px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+// url('TilesSmall.jpg') O
+// url('TilesBig.jpg') X
+
+var tictactoe = ["Aleph", "Bet", "Gimmel", "Dalet", "Hei", "Vav", "Zayin", "Het", "Tet"];
+
+function check() {
+
+	var Tile1 = 0;
+
+var Tile2 = 0;
+
+var Tile3 = 0;
+
+var Tile4 = 0;
+
+var Tile5 = 0;
+
+var Tile6 = 0;
+
+var Tile7 = 0;
+
+var Tile8 = 0;
+
+var Tile9 = 0;
+
+if (document.getElementById("T1").innerHTML == 1){
+	var Tile1 = 1;
+}
+
+if (document.getElementById("T2").innerHTML == 1){
+	var Tile2 = 1;
+}
+
+if (document.getElementById("T3").innerHTML == 1){
+	var Tile3 = 1;
+}
+
+if (document.getElementById("T4").innerHTML == 1){
+	var Tile4 = 1;
+}
+
+if (document.getElementById("T5").innerHTML == 1){
+	var Tile5 = 1;
+}
+
+if (document.getElementById("T6").innerHTML == 1){
+	var Tile6 = 1;
+}
+
+if (document.getElementById("T7").innerHTML == 1){
+	var Tile7 = 1;
+}
+
+if (document.getElementById("T8").innerHTML == 1){
+	var Tile8 = 1;
+}
+
+if (document.getElementById("T9").innerHTML == 1){
+	var Tile9 = 1;
+}
+
+if (document.getElementById("T1").innerHTML == 2){
+	var Tile1 = 2;
+}
+
+if (document.getElementById("T2").innerHTML == 2){
+	var Tile2 = 2;
+}
+
+if (document.getElementById("T3").innerHTML == 2){
+	var Tile3 = 2;
+}
+
+if (document.getElementById("T4").innerHTML == 2){
+	var Tile4 = 2;
+}
+
+if (document.getElementById("T5").innerHTML == 2){
+	var Tile5 = 2;
+}
+
+if (document.getElementById("T6").innerHTML == 2){
+	var Tile6 = 2;
+}
+
+if (document.getElementById("T7").innerHTML == 2){
+	var Tile7 = 2;
+}
+
+if (document.getElementById("T8").innerHTML == 2){
+	var Tile8 = 2;
+}
+
+if (document.getElementById("T9").innerHTML == 2){
+	var Tile9 = 2;
+}
+
+	var mash = Tile1 + Tile2 + Tile3 + Tile4 + Tile6 + Tile7 + Tile8 + Tile9;
+	document.getElementById("validator").innerHTML = (mash);
+	if (document.getElementById("validator").innerHTML == 1){
+			document.getElementById("T5").style.backgroundImage = "url('TilesSmall.jpg')";
+			document.getElementById("T5").innerHTML = 2;
+			tictactoe.splice(4, 1);
+		}
+
+}
+
+
+function random1() {
+	var A1 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A1;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * tictactoe.length) + 1);
+		var concat = tictactoe[BadLuck];
+	document.getElementById("SorryM8").innerHTML = concat;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function random2() {
+	var A2 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A2;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * 9) + 1);
+	document.getElementById("SorryM8").innerHTML = BadLuck;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function random3() {
+	var A3 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A3;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * 9) + 1);
+	document.getElementById("SorryM8").innerHTML = BadLuck;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function random4() {
+	var A4 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A4;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * 9) + 1);
+	document.getElementById("SorryM8").innerHTML = BadLuck;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function random5() {
+	var A5 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A5;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * 9) + 1);
+	document.getElementById("SorryM8").innerHTML = BadLuck;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function random6() {
+	var A6 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A6;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * 9) + 1);
+	document.getElementById("SorryM8").innerHTML = BadLuck;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function random7() {
+	var A7 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A7;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * 9) + 1);
+	document.getElementById("SorryM8").innerHTML = BadLuck;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function random8() {
+	var A8 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A8;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * 9) + 1);
+	document.getElementById("SorryM8").innerHTML = BadLuck;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function random9() {
+	var A9 = Math.floor((Math.random() * 3) + 1);
+	document.getElementById("Tile").innerHTML = A9;
+
+	if(document.getElementById("Tile").innerHTML >= 2) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+
+	if(document.getElementById("Tile").innerHTML == 1){
+		var BadLuck = Math.floor((Math.random() * 9) + 1);
+	document.getElementById("SorryM8").innerHTML = BadLuck;
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 1) {
+		document.getElementById("T1").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T1").innerHTML = 1;
+		tictactoe.splice(0, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 2) {
+		document.getElementById("T2").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T2").innerHTML = 1;
+		tictactoe.splice(1, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 3) {
+		document.getElementById("T3").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T3").innerHTML = 1;
+		tictactoe.splice(2, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 4) {
+		document.getElementById("T4").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T4").innerHTML = 1;
+		tictactoe.splice(3, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 5) {
+		document.getElementById("T5").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T5").innerHTML = 1;
+		tictactoe.splice(4, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 6) {
+		document.getElementById("T6").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T6").innerHTML = 1;
+		tictactoe.splice(5, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 7) {
+		document.getElementById("T7").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T7").innerHTML = 1;
+		tictactoe.splice(6, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 8) {
+		document.getElementById("T8").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T8").innerHTML = 1;
+		tictactoe.splice(7, 1);
+	}
+
+	if(document.getElementById("SorryM8").innerHTML == 9) {
+		document.getElementById("T9").style.backgroundImage = "url('TilesBig.jpg')";
+		document.getElementById("T9").innerHTML = 1;
+		tictactoe.splice(8, 1);
+	}
+}
+
+function display(){
+	document.getElementById("blah").innerHTML = tictactoe;
+}
+
+</script>
+
+<body>
+
+<table align="center" border="4">
+
+<tr>
+<th onClick="random1(); check(); stick();" id="T1" width="150px" height="150px">
+
+</th>
+<th onClick="random2(); check(); stick();" id="T2" width="150px" height="150px">
+
+</th>
+
+<th onClick="random3(); check(); stick();" id="T3" width="150px" height="150px">
+
+</th>
+</tr>
+<tr>
+<th onClick="random4(); check(); stick();" id="T4" width="150px" height="150px">
+
+</th>
+<th onClick="random5(); check(); stick();" id="T5" width="150px" height="150px">
+
+</th>
+
+<th onClick="random6(); check(); stick();" id="T6" width="150px" height="150px">
+
+</th>
+</tr>
+<tr>
+<th onClick="random7(); check(); stick();" id="T7" width="150px" height="150px">
+
+</th>
+<th onClick="random8(); check(); stick();" id="T8" width="150px" height="150px">
+
+</th>
+
+<th onClick="random9(); check(); stick();" id="T9" width="150px" height="150px">
+
+</th>
+</tr>
+</table>
+
+<p id="Tile">
+
+</p>
+
+<p id="blah">
+
+</p>
+
+<p id="SorryM8">
+
+</p>
+
+<p id="validator">
+
+</p>
+
+<button onClick="display();">
+Work
+</button>
+
+</body>
+
+</html>
